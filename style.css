@@ -1,6 +1,5 @@
-﻿/* ============================================
-   Termination Benefit Calculator
-   Simplified - Modern - Non-Template
+/* ============================================
+   Termination Benefit Calculator - Simplified
    ============================================ */
 
 :root {
@@ -15,8 +14,6 @@
     --gray-300: #d4d4d2;
     --gray-400: #9a9a98;
     --gray-500: #6b6b69;
-    --gray-600: #4a4a48;
-    --gray-700: #2d2d2b;
     --text: #1a1a2e;
     --text-secondary: #4a4a48;
     --text-muted: #6b6b69;
@@ -39,32 +36,15 @@ body {
     color: var(--text);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
 
-/* ============================================
-   HEADER
-   ============================================ */
+/* Header */
 .header {
     padding: 48px 0 32px;
     text-align: center;
 }
-
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-muted);
-    text-decoration: none;
-    margin-bottom: 24px;
-    transition: var(--transition);
-}
-
-.back-link:hover { color: var(--charcoal); }
 
 .header h1 {
     font-size: 28px;
@@ -80,17 +60,10 @@ body {
     font-weight: 400;
 }
 
-.subtitle .highlight {
-    color: var(--coral);
-    font-weight: 600;
-}
+.subtitle .highlight { color: var(--coral); font-weight: 600; }
 
-/* ============================================
-   SECTION BLOCKS
-   ============================================ */
-.section-block {
-    margin-bottom: 40px;
-}
+/* Section Blocks */
+.section-block { margin-bottom: 40px; }
 
 .section-header {
     display: flex;
@@ -121,9 +94,7 @@ body {
     letter-spacing: -0.01em;
 }
 
-/* ============================================
-   FORM GRID
-   ============================================ */
+/* Form Grid */
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -136,9 +107,7 @@ body {
     gap: 6px;
 }
 
-.form-group:has(#yearsOfService) {
-    grid-column: span 2;
-}
+.form-group-full { grid-column: span 2; }
 
 label {
     font-size: 12px;
@@ -148,10 +117,7 @@ label {
     letter-spacing: 0.04em;
 }
 
-.required {
-    color: var(--coral);
-    font-weight: 600;
-}
+.required { color: var(--coral); font-weight: 600; }
 
 input, select {
     width: 100%;
@@ -173,9 +139,7 @@ input:focus, select:focus {
     background: var(--white);
 }
 
-input::placeholder {
-    color: var(--gray-400);
-}
+input::placeholder { color: var(--gray-400); }
 
 select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239a9a98' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
@@ -185,7 +149,7 @@ select {
     cursor: pointer;
 }
 
-/* Input Pair (year/month) */
+/* Input Pair */
 .input-pair {
     display: flex;
     align-items: center;
@@ -206,7 +170,7 @@ select {
     white-space: nowrap;
 }
 
-/* Input Currency */
+/* Currency Input */
 .input-currency {
     position: relative;
     display: flex;
@@ -226,12 +190,6 @@ select {
     padding-left: 38px;
     background-image: none;
     padding-right: 12px;
-}
-
-.helper {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-top: 2px;
 }
 
 /* Info Panel */
@@ -260,9 +218,7 @@ select {
     border-radius: var(--radius);
 }
 
-/* ============================================
-   BUTTONS
-   ============================================ */
+/* Buttons */
 .actions {
     display: flex;
     align-items: center;
@@ -290,9 +246,7 @@ select {
     letter-spacing: 0.01em;
 }
 
-.btn-primary:hover {
-    background: var(--charcoal-light);
-}
+.btn-primary:hover { background: var(--charcoal-light); }
 
 .btn-text {
     background: transparent;
@@ -302,13 +256,9 @@ select {
     text-underline-offset: 3px;
 }
 
-.btn-text:hover {
-    color: var(--charcoal);
-}
+.btn-text:hover { color: var(--charcoal); }
 
-/* ============================================
-   RESULT SECTION
-   ============================================ */
+/* Result Section */
 .result-section {
     animation: fadeIn 0.3s ease;
 }
@@ -374,16 +324,8 @@ select {
     padding: 4px 0;
 }
 
-.summary-label {
-    color: var(--text-muted);
-    font-weight: 400;
-}
-
-.summary-value {
-    color: var(--text);
-    font-weight: 600;
-    text-align: right;
-}
+.summary-label { color: var(--text-muted); font-weight: 400; }
+.summary-value { color: var(--text); font-weight: 600; text-align: right; }
 
 /* Results List */
 .results-list {
@@ -418,10 +360,7 @@ select {
     color: var(--charcoal);
 }
 
-.result-icon {
-    color: var(--coral);
-    font-size: 10px;
-}
+.result-icon { color: var(--coral); font-size: 10px; }
 
 .result-item-value {
     font-size: 16px;
@@ -442,46 +381,15 @@ select {
     margin-bottom: 10px;
 }
 
-/* Legal Reference */
-.legal-ref {
-    margin-top: 10px;
-    padding: 10px 12px;
-    background: var(--cream);
-    border-left: 2px solid var(--coral);
-    border-radius: 0 var(--radius) var(--radius) 0;
-}
-
-.legal-ref .ref-pasal {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--charcoal);
-    margin-bottom: 3px;
-}
-
-.legal-ref .ref-text {
-    font-size: 11px;
-    color: var(--text-muted);
-    line-height: 1.4;
-}
-
-/* Excluded / Not Eligible */
+/* Excluded */
 .result-item.excluded .result-item-header {
     background: var(--coral-light);
     border-bottom-color: var(--coral);
 }
 
-.result-item.excluded .result-item-title {
-    color: var(--coral);
-}
+.result-item.excluded .result-item-title { color: var(--coral); }
 
-.result-item.excluded .result-icon {
-    color: var(--coral);
-}
-
-#notEligibleList {
-    list-style: none;
-    padding: 0;
-}
+#notEligibleList { list-style: none; padding: 0; }
 
 #notEligibleList li {
     padding: 8px 0;
@@ -490,9 +398,7 @@ select {
     border-bottom: 1px solid var(--border);
 }
 
-#notEligibleList li:last-child {
-    border-bottom: none;
-}
+#notEligibleList li:last-child { border-bottom: none; }
 
 #notEligibleList li strong {
     color: var(--coral);
@@ -515,13 +421,9 @@ select {
     border-bottom: 1px solid var(--border);
 }
 
-.uph-breakdown-item:last-child {
-    border-bottom: none;
-}
+.uph-breakdown-item:last-child { border-bottom: none; }
 
-.uph-breakdown-label {
-    color: var(--text-secondary);
-}
+.uph-breakdown-label { color: var(--text-secondary); }
 
 .uph-breakdown-value {
     font-weight: 600;
@@ -562,26 +464,6 @@ select {
     font-style: italic;
 }
 
-/* Disclaimer */
-.disclaimer-box {
-    background: var(--gray-100);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 14px 16px;
-    margin-bottom: 20px;
-}
-
-.disclaimer-box p {
-    font-size: 11px;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-
-.disclaimer-box strong {
-    color: var(--text-secondary);
-    font-weight: 600;
-}
-
 /* Result Actions */
 .result-actions {
     display: flex;
@@ -590,9 +472,7 @@ select {
     justify-content: center;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
+/* Footer */
 .footer {
     text-align: center;
     padding: 40px 0 48px;
@@ -612,9 +492,7 @@ select {
 }
 
 /* ============================================
-   ============================================
-   PRINT STYLES - 1 HALAMAN A4 RAPI
-   ============================================
+   PRINT STYLES
    ============================================ */
 
 @media print {
@@ -644,19 +522,14 @@ select {
         margin: 0 !important;
     }
 
-    /* HIDE */
     .header,
     .form-section,
     .actions,
     .result-actions,
-    .footer,
-    .back-link,
-    .result-title,
-    .disclaimer-box {
+    .footer {
         display: none !important;
     }
 
-    /* SHOW RESULT */
     .result-section {
         display: block !important;
         animation: none !important;
@@ -664,7 +537,6 @@ select {
         padding: 0 !important;
     }
 
-    /* PRINT HEADER */
     .result-section::before {
         content: "SURAT PERHITUNGAN HAK KARYAWAN";
         display: block;
@@ -678,7 +550,6 @@ select {
         letter-spacing: 0.5px;
     }
 
-    /* SUMMARY */
     .summary-card {
         background: white !important;
         border: 1px solid #333 !important;
@@ -732,7 +603,6 @@ select {
         font-weight: 600;
     }
 
-    /* RESULT ITEMS */
     .results-list {
         gap: 6px !important;
         margin-bottom: 8px !important;
@@ -761,10 +631,7 @@ select {
         gap: 6px !important;
     }
 
-    .result-icon {
-        color: #e85d4e !important;
-        font-size: 8px !important;
-    }
+    .result-icon { color: #e85d4e !important; font-size: 8px !important; }
 
     .result-item-value {
         font-size: 10pt !important;
@@ -783,49 +650,23 @@ select {
         line-height: 1.25 !important;
     }
 
-    /* LEGAL REF */
-    .legal-ref {
-        background: #faf9f7 !important;
-        border-left: 2px solid #e85d4e !important;
-        border-radius: 0 !important;
-        padding: 4px 8px !important;
-        margin-top: 4px !important;
-    }
-
-    .legal-ref .ref-pasal {
-        font-size: 7.5pt !important;
-        color: #1a1a2e !important;
-        margin-bottom: 1px !important;
-    }
-
-    .legal-ref .ref-text {
-        font-size: 7pt !important;
-        color: #555 !important;
-        line-height: 1.25 !important;
-    }
-
-    /* EXCLUDED */
     .result-item.excluded .result-item-header {
         background: #f5e6e4 !important;
         border-bottom-color: #e85d4e !important;
     }
 
-    .result-item.excluded .result-item-title {
-        color: #e85d4e !important;
-    }
+    .result-item.excluded .result-item-title { color: #e85d4e !important; }
 
     #notEligibleList li {
         font-size: 8pt !important;
         padding: 2px 0 !important;
     }
 
-    /* UPH */
     .uph-breakdown-item {
         font-size: 8pt !important;
         padding: 2px 0 !important;
     }
 
-    /* TOTAL */
     .total-box {
         background: #1a1a2e !important;
         color: white !important;
@@ -835,23 +676,12 @@ select {
         border: 2px solid #1a1a2e !important;
     }
 
-    .total-label {
-        font-size: 8pt !important;
-        margin-bottom: 2px !important;
-    }
+    .total-label { font-size: 8pt !important; margin-bottom: 2px !important; }
+    .total-value { font-size: 14pt !important; margin-bottom: 1px !important; }
+    .total-words { font-size: 7pt !important; }
 
-    .total-value {
-        font-size: 14pt !important;
-        margin-bottom: 1px !important;
-    }
-
-    .total-words {
-        font-size: 7pt !important;
-    }
-
-    /* FOOTER */
     .result-section::after {
-        content: "Dokumen dihasilkan oleh Termination Benefit Calculator | YM-ID | PP No. 35 Tahun 2021";
+        content: "Dokumen dihasilkan oleh Termination Benefit Calculator | PP No. 35 Tahun 2021";
         display: block;
         text-align: center;
         font-size: 6.5pt;
@@ -860,14 +690,12 @@ select {
         padding-top: 4px;
         border-top: 1px solid #ddd;
     }
-
-    .detail-item + .detail-item { margin-top: 4px !important; }
-    .detail-item[style*="display: none"] { display: none !important; }
 }
 
 /* ============================================
    RESPONSIVE
    ============================================ */
+
 @media (max-width: 640px) {
     .container { padding: 0 16px; }
     .header { padding: 32px 0 24px; }
@@ -879,9 +707,7 @@ select {
         gap: 14px;
     }
 
-    .form-group:has(#yearsOfService) {
-        grid-column: span 1;
-    }
+    .form-group-full { grid-column: span 1; }
 
     .section-block { margin-bottom: 32px; }
     .actions { flex-direction: column; gap: 8px; }
@@ -904,122 +730,8 @@ select {
     .section-header h2 { font-size: 14px; }
 }
 
+/* Structural */
+.main-content { display: block; }
 
-
-/* ============================================
-   LAMPIRAN SECTION
-   ============================================ */
-
-.lampiran-section {
-    margin-top: 32px;
-    margin-bottom: 24px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    page-break-before: always;
-    break-before: page;
-}
-
-.lampiran-header {
-    background: var(--charcoal);
-    color: var(--white);
-    padding: 16px 20px;
-    text-align: center;
-}
-
-.lampiran-header h3 {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-}
-
-.lampiran-header p {
-    font-size: 11px;
-    opacity: 0.7;
-    font-weight: 400;
-}
-
-.lampiran-content {
-    padding: 0;
-    background: var(--white);
-}
-
-.lampiran-pasal {
-    border-bottom: 1px solid var(--border);
-    page-break-inside: avoid;
-    break-inside: avoid;
-}
-
-.lampiran-pasal:last-child {
-    border-bottom: none;
-}
-
-.lampiran-pasal-title {
-    background: var(--gray-100);
-    padding: 10px 16px;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--charcoal);
-    border-left: 3px solid var(--coral);
-}
-
-.lampiran-pasal-content {
-    padding: 12px 16px;
-    font-size: 11px;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    white-space: pre-line;
-}
-
-/* ============================================
-   PRINT STYLES - LAMPIRAN
-   ============================================ */
-
-@media print {
-    .lampiran-section {
-        display: block !important;
-        page-break-before: always !important;
-        break-before: page !important;
-        margin-top: 0 !important;
-        border: 1px solid #333 !important;
-        border-radius: 0 !important;
-    }
-
-    .lampiran-header {
-        background: #1a1a2e !important;
-        color: white !important;
-        padding: 6px 10px !important;
-        border-bottom: 1.5px solid #1a1a2e !important;
-    }
-
-    .lampiran-header h3 {
-        font-size: 10pt !important;
-        margin-bottom: 1px !important;
-    }
-
-    .lampiran-header p {
-        font-size: 7.5pt !important;
-    }
-
-    .lampiran-pasal {
-        border-bottom: 1px solid #ddd !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-    }
-
-    .lampiran-pasal-title {
-        background: #f5f5f3 !important;
-        padding: 3px 10px !important;
-        font-size: 8.5pt !important;
-        border-left: 2px solid #e85d4e !important;
-    }
-
-    .lampiran-pasal-content {
-        padding: 5px 10px !important;
-        font-size: 7pt !important;
-        line-height: 1.3 !important;
-        color: #333 !important;
-    }
-}
+/* Currency input class for JS selection */
+.currency-input { /* styling inherited from input */ }
