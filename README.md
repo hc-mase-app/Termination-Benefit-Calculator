@@ -119,4 +119,4 @@ Untuk kepastian hukum, konsultasikan dengan HR atau konsultan hukum ketenagakerj
 
 ---
 
-Dibuat Oleh **Yan Firdaus | YM-ID | Business, People & Digital Solutions**
+Dibuat untuk **YM-ID | Business, People & Digital Solutions**

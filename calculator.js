@@ -3,26 +3,22 @@
    Based on PP No. 35 Tahun 2021
    ============================================ */
 
-// ============================================
-// DATA: Alasan Terminasi (Dropdown Bertingkat)
-// ============================================
-
+// Data: Alasan Terminasi (Dropdown Bertingkat)
 const terminationData = {
     phk_perusahaan: {
         label: "PHK oleh Perusahaan",
-        icon: "📋",
         reasons: {
             phk_merger: { 
                 label: "Merger / Konsolidasi / Fusi", 
                 pasal: "Pasal 36 ayat (1) huruf a",
                 up: true, upmk: true, uph: true, pkwt: false,
-                description: "Pekerja menolak dilanjutkan hubungan kerjanya dengan perusahaan penerus atau perusahaan baru."
+                description: "Pekerja menolak dilanjutkan hubungan kerjanya dengan perusahaan penerus."
             },
             phk_akuisisi: { 
                 label: "Akuisisi Perusahaan", 
                 pasal: "Pasal 36 ayat (1) huruf b",
                 up: true, upmk: true, uph: true, pkwt: false,
-                description: "Pekerja menolak dilanjutkan hubungan kerjanya oleh perusahaan penerus atau perusahaan baru."
+                description: "Pekerja menolak dilanjutkan hubungan kerjanya oleh perusahaan penerus."
             },
             phk_efisiensi: { 
                 label: "Efisiensi Perusahaan", 
@@ -37,10 +33,10 @@ const terminationData = {
                 description: "Penutupan perusahaan yang bukan karena rugi 2 tahun berturut-turut."
             },
             phk_tutup_rugi: { 
-                label: "Tutup karena Rugi 2 Tahun Berturut-turut", 
+                label: "Tutup karena Rugi 2 Tahun", 
                 pasal: "Pasal 36 ayat (1) huruf e",
                 up: true, upmk: true, uph: true, pkwt: false,
-                description: "Penutupan perusahaan karena mengalami kerugian selama 2 tahun berturut-turut."
+                description: "Penutupan perusahaan karena rugi 2 tahun berturut-turut."
             },
             phk_force_majeure: { 
                 label: "Force Majeure", 
@@ -61,7 +57,7 @@ const terminationData = {
                 description: "Perusahaan dinyatakan pailit."
             },
             phk_sakit: { 
-                label: "Sakit > 12 Bulan Berturut-turut", 
+                label: "Sakit > 12 Bulan", 
                 pasal: "Pasal 36 ayat (1) huruf i",
                 up: true, upmk: true, uph: true, pkwt: false,
                 description: "Pekerja sakit lebih dari 12 bulan berturut-turut."
@@ -76,31 +72,30 @@ const terminationData = {
                 label: "Kesalahan Berat", 
                 pasal: "Pasal 36 ayat (1) huruf k",
                 up: true, upmk: true, uph: true, pkwt: false,
-                description: "Pekerja melakukan kesalahan berat setelah diberi peringatan tertulis 3 kali."
+                description: "Pekerja melakukan kesalahan berat setelah peringatan tertulis 3x."
             },
             phk_pelanggaran_pkb: { 
                 label: "Pelanggaran Ketentuan PKB", 
                 pasal: "Pasal 36 ayat (1) huruf l",
                 up: true, upmk: true, uph: true, pkwt: false,
-                description: "Pekerja melanggar ketentuan PKB setelah diberi peringatan tertulis 3 kali."
+                description: "Pekerja melanggar ketentuan PKB setelah peringatan tertulis 3x."
             },
             phk_tidak_masuk: { 
-                label: "Tidak Masuk > 5 Hari Kerja Berturut-turut", 
+                label: "Tidak Masuk > 5 Hari Kerja", 
                 pasal: "Pasal 36 ayat (1) huruf m",
                 up: true, upmk: true, uph: true, pkwt: false,
-                description: "Pekerja tidak masuk kerja lebih dari 5 hari kerja berturut-turut tanpa keterangan dan tidak merespons panggilan 2 kali."
+                description: "Pekerja tidak masuk kerja > 5 hari berturut-turut tanpa keterangan."
             }
         }
     },
     phk_pekerja: {
         label: "PHK oleh Pekerja",
-        icon: "👤",
         reasons: {
             phk_pekerja_kekerasan: { 
-                label: "Kekerasan / Ancaman / Intimidasi dari Pengusaha", 
+                label: "Kekerasan / Ancaman / Intimidasi", 
                 pasal: "Pasal 37 ayat (2) huruf a",
                 up: true, upmk: true, uph: true, pkwt: false,
-                description: "Pengusaha melakukan kekerasan, ancaman, atau intimidasi terhadap pekerja."
+                description: "Pengusaha melakukan kekerasan, ancaman, atau intimidasi."
             },
             phk_pekerja_upah: { 
                 label: "Upah Tidak Dibayar > 3 Bulan", 
@@ -112,19 +107,18 @@ const terminationData = {
                 label: "Pengusaha Tidak Menjalankan Kewajiban", 
                 pasal: "Pasal 37 ayat (2) huruf c",
                 up: true, upmk: true, uph: true, pkwt: false,
-                description: "Pengusaha tidak menjalankan kewajiban yang telah dijanjikan sesuai PK/PKB/Perjanjian."
+                description: "Pengusaha tidak menjalankan kewajiban sesuai PK/PKB/Perjanjian."
             },
             phk_pekerja_luar_pk: { 
-                label: "Disuruh Kerja di Luar PK tanpa Persetujuan", 
+                label: "Disuruh Kerja di Luar PK", 
                 pasal: "Pasal 37 ayat (2) huruf d",
                 up: true, upmk: true, uph: true, pkwt: false,
-                description: "Pekerja disuruh melakukan pekerjaan di luar yang ditentukan dalam PK tanpa persetujuan."
+                description: "Pekerja disuruh kerja di luar PK tanpa persetujuan."
             }
         }
     },
     berakhir: {
         label: "Berakhirnya Hubungan Kerja",
-        icon: "🔄",
         reasons: {
             meninggal: { 
                 label: "Meninggal Dunia", 
@@ -136,51 +130,45 @@ const terminationData = {
                 label: "Habis Masa Kerja (PKWT)", 
                 pasal: "Pasal 37 ayat (1) huruf b",
                 up: false, upmk: false, uph: false, pkwt: true,
-                description: "Hubungan kerja berakhir karena habis masa kerja pada PKWT. Mendapat kompensasi PKWT."
+                description: "Hubungan kerja berakhir karena habis masa kerja PKWT."
             },
             resign: { 
                 label: "Mengundurkan Diri", 
                 pasal: "Pasal 37 ayat (1) huruf c",
                 up: false, upmk: true, uph: true, pkwt: false,
-                description: "Pekerja mengundurkan diri. Tidak berhak UP, tetapi tetap berhak UPMK dan UPH."
+                description: "Pekerja mengundurkan diri. Tidak berhak UP."
             },
             pensiun: { 
                 label: "Pensiun", 
                 pasal: "Pasal 37 ayat (1) huruf d",
                 up: false, upmk: true, uph: true, pkwt: false,
-                description: "Pekerja mencapai usia pensiun. Tidak berhak UP, tetapi tetap berhak UPMK dan UPH."
+                description: "Pekerja mencapai usia pensiun. Tidak berhak UP."
             }
         }
     }
 };
 
-// ============================================
-// DATA: Referensi Hukum Detail per Komponen
-// ============================================
-
+// Data: Referensi Hukum
 const legalReferences = {
     up: {
         pasal: "Pasal 40 dan Pasal 41",
-        text: "Uang Pesangon diberikan kepada pekerja/buruh yang di-PHK oleh pengusaha, dengan jumlah sesuai masa kerja: < 1 th = 1x upah, 1-<2 th = 2x, 2-<3 th = 3x, 3-<4 th = 4x, 4-<5 th = 5x, 5-<6 th = 6x, 6-<7 th = 7x, 7-<8 th = 8x, ≥8 th = 9x upah."
+        text: "UP diberikan kepada pekerja yang di-PHK oleh pengusaha. Jumlah: <1 th=1x, 1-<2 th=2x, 2-<3 th=3x, 3-<4 th=4x, 4-<5 th=5x, 5-<6 th=6x, 6-<7 th=7x, 7-<8 th=8x, ≥8 th=9x upah."
     },
     upmk: {
         pasal: "Pasal 42 dan Pasal 43",
-        text: "Uang Penghargaan Masa Kerja diberikan sebagai penghargaan atas kontribusi pekerja selama masa kerjanya. Minimal masa kerja 3 tahun. 3-<6 th = 2x, 6-<9 th = 3x, 9-<12 th = 4x, 12-<15 th = 5x, 15-<18 th = 6x, 18-<21 th = 7x, 21-<24 th = 8x, ≥24 th = 10x upah."
+        text: "UPMK diberikan sebagai penghargaan atas kontribusi. Minimal 3 tahun masa kerja. 3-<6 th=2x, 6-<9 th=3x, 9-<12 th=4x, 12-<15 th=5x, 15-<18 th=6x, 18-<21 th=7x, 21-<24 th=8x, ≥24 th=10x upah."
     },
     uph: {
         pasal: "Pasal 44 dan Pasal 45",
-        text: "Uang Penggantian Hak meliputi: (1) cuti tahunan yang belum diambil dan belum gugur, (2) ongkos pulang pekerja/buruh dan keluarganya ke tempat dari mana pekerja/buruh dipekerjakan, dan (3) hal lain yang ditentukan dalam PK/PKB/perjanjian kerja."
+        text: "UPH meliputi: (1) cuti tahunan yang belum diambil, (2) ongkos pulang ke tempat asal, (3) hal lain sesuai PK/PKB/Perjanjian."
     },
     pkwt: {
         pasal: "Pasal 15",
-        text: "Kompensasi PKWT diberikan saat berakhirnya perjanjian kerja waktu tertentu. Dihitung proporsional: (masa kerja PKWT dalam bulan / 12) × 1 bulan upah."
+        text: "Kompensasi PKWT dihitung proporsional: (masa kerja PKWT dalam bulan / 12) × 1 bulan upah."
     }
 };
 
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
-
+// Utility Functions
 function formatIDR(number) {
     if (isNaN(number) || number === null) return 'Rp 0';
     return 'Rp ' + number.toLocaleString('id-ID');
@@ -193,7 +181,6 @@ function parseCurrency(value) {
 
 function terbilang(angka) {
     const bilangan = ['', 'Satu', 'Dua', 'Tiga', 'Empat', 'Lima', 'Enam', 'Tujuh', 'Delapan', 'Sembilan', 'Sepuluh', 'Sebelas'];
-
     if (angka < 12) return bilangan[angka];
     if (angka < 20) return bilangan[angka - 10] + ' Belas';
     if (angka < 100) return bilangan[Math.floor(angka / 10)] + ' Puluh ' + bilangan[angka % 10];
@@ -211,14 +198,10 @@ function formatTerbilang(angka) {
     return terbilang(angka).trim() + ' Rupiah';
 }
 
-// ============================================
-// CALCULATION FUNCTIONS
-// ============================================
-
+// Calculation Functions
 function calculateUP(totalMonths, monthlyWage) {
     const years = totalMonths / 12;
     let multiplier = 0;
-
     if (years < 1) multiplier = 1;
     else if (years < 2) multiplier = 2;
     else if (years < 3) multiplier = 3;
@@ -228,17 +211,14 @@ function calculateUP(totalMonths, monthlyWage) {
     else if (years < 7) multiplier = 7;
     else if (years < 8) multiplier = 8;
     else multiplier = 9;
-
     return { amount: multiplier * monthlyWage, multiplier, years };
 }
 
 function calculateUPMK(totalMonths, monthlyWage) {
     const years = totalMonths / 12;
     let multiplier = 0;
-
-    if (years < 3) {
-        return { amount: 0, multiplier: 0, years, eligible: false };
-    } else if (years < 6) multiplier = 2;
+    if (years < 3) return { amount: 0, multiplier: 0, years, eligible: false };
+    else if (years < 6) multiplier = 2;
     else if (years < 9) multiplier = 3;
     else if (years < 12) multiplier = 4;
     else if (years < 15) multiplier = 5;
@@ -246,7 +226,6 @@ function calculateUPMK(totalMonths, monthlyWage) {
     else if (years < 21) multiplier = 7;
     else if (years < 24) multiplier = 8;
     else multiplier = 10;
-
     return { amount: multiplier * monthlyWage, multiplier, years, eligible: true };
 }
 
@@ -254,7 +233,6 @@ function calculateUPH(monthlyWage, remainingLeave, repatriationCost, otherUPH) {
     const dailyWage = monthlyWage / 25;
     const leaveCompensation = remainingLeave * dailyWage;
     const totalUPH = leaveCompensation + repatriationCost + otherUPH;
-
     return { amount: totalUPH, leaveCompensation, repatriationCost, otherUPH, remainingLeave, dailyWage };
 }
 
@@ -263,20 +241,17 @@ function calculatePKWTCompensation(pkwtMonths, monthlyWage) {
     return { amount: multiplier * monthlyWage, months: pkwtMonths, multiplier };
 }
 
-// ============================================
-// DROPDOWN BERTINGKAT LOGIC
-// ============================================
-
+// Dropdown Logic
 function populateReasonDropdown(category) {
     const reasonSelect = document.getElementById('terminationReason');
-    const subCategoryRow = document.getElementById('subCategoryRow');
-    const reasonInfoRow = document.getElementById('reasonInfoRow');
+    const subCategoryGroup = document.getElementById('subCategoryGroup');
+    const reasonInfoPanel = document.getElementById('reasonInfoPanel');
 
     reasonSelect.innerHTML = '<option value="" disabled selected>Pilih alasan</option>';
 
     if (!category) {
-        subCategoryRow.style.display = 'none';
-        reasonInfoRow.style.display = 'none';
+        subCategoryGroup.style.display = 'none';
+        reasonInfoPanel.style.display = 'none';
         return;
     }
 
@@ -290,21 +265,20 @@ function populateReasonDropdown(category) {
         reasonSelect.appendChild(option);
     });
 
-    subCategoryRow.style.display = 'flex';
-    reasonInfoRow.style.display = 'none';
+    subCategoryGroup.style.display = 'block';
+    reasonInfoPanel.style.display = 'none';
 }
 
 function showReasonInfo(reasonKey) {
-    const reasonInfoRow = document.getElementById('reasonInfoRow');
+    const reasonInfoPanel = document.getElementById('reasonInfoPanel');
     const reasonDescription = document.getElementById('reasonDescription');
     const reasonPasal = document.getElementById('reasonPasal');
 
     if (!reasonKey) {
-        reasonInfoRow.style.display = 'none';
+        reasonInfoPanel.style.display = 'none';
         return;
     }
 
-    // Find reason data
     let reasonData = null;
     for (const cat of Object.values(terminationData)) {
         if (cat.reasons[reasonKey]) {
@@ -317,13 +291,10 @@ function showReasonInfo(reasonKey) {
 
     reasonDescription.textContent = reasonData.description;
     reasonPasal.textContent = reasonData.pasal;
-    reasonInfoRow.style.display = 'flex';
+    reasonInfoPanel.style.display = 'block';
 }
 
-// ============================================
-// MAIN CALCULATION
-// ============================================
-
+// Main Calculation
 function performCalculation() {
     const employeeName = document.getElementById('employeeName').value || '-';
     const position = document.getElementById('position').value || '-';
@@ -332,19 +303,16 @@ function performCalculation() {
     const months = parseInt(document.getElementById('monthsOfService').value) || 0;
     const basicSalary = parseCurrency(document.getElementById('basicSalary').value);
     const fixedAllowance = parseCurrency(document.getElementById('fixedAllowance').value);
-
     const reasonKey = document.getElementById('terminationReason').value;
     const pkwtDuration = parseInt(document.getElementById('pkwtDuration').value) || 0;
     const remainingLeave = parseInt(document.getElementById('remainingLeave').value) || 0;
     const repatriationCost = parseCurrency(document.getElementById('repatriationCost').value);
     const otherUPH = parseCurrency(document.getElementById('otherUPH').value);
 
-    // Validation
-    if (!employmentStatus) { alert('Silakan pilih Status Kepegawaian.'); return; }
-    if (!reasonKey) { alert('Silakan pilih Alasan Terminasi.'); return; }
-    if (basicSalary <= 0) { alert('Silakan masukkan Gaji Pokok yang valid.'); return; }
+    if (!employmentStatus) { alert('Pilih Status Kepegawaian.'); return; }
+    if (!reasonKey) { alert('Pilih Alasan Terminasi.'); return; }
+    if (basicSalary <= 0) { alert('Masukkan Gaji Pokok.'); return; }
 
-    // Find reason data
     let reasonData = null;
     for (const cat of Object.values(terminationData)) {
         if (cat.reasons[reasonKey]) {
@@ -352,21 +320,17 @@ function performCalculation() {
             break;
         }
     }
-
-    if (!reasonData) { alert('Alasan terminasi tidak valid.'); return; }
+    if (!reasonData) { alert('Alasan tidak valid.'); return; }
 
     const totalMonths = (years * 12) + months;
     const monthlyWage = basicSalary + fixedAllowance;
 
-    // Calculate components
     let upResult = { amount: 0, multiplier: 0, years: totalMonths / 12 };
     let upmkResult = { amount: 0, multiplier: 0, years: totalMonths / 12, eligible: false };
     let uphResult = { amount: 0, leaveCompensation: 0, repatriationCost: 0, otherUPH: 0 };
     let pkwtResult = { amount: 0, months: 0, multiplier: 0 };
-
     const notEligibleItems = [];
 
-    // UP
     if (reasonData.up) {
         upResult = calculateUP(totalMonths, monthlyWage);
     } else {
@@ -377,13 +341,12 @@ function performCalculation() {
         });
     }
 
-    // UPMK
     if (reasonData.upmk) {
         upmkResult = calculateUPMK(totalMonths, monthlyWage);
         if (!upmkResult.eligible) {
             notEligibleItems.push({
                 name: 'Uang Penghargaan Masa Kerja (UPMK)',
-                reason: `Tidak berhak UPMK karena masa kerja kurang dari 3 tahun (${(totalMonths/12).toFixed(1)} tahun).`,
+                reason: `Masa kerja kurang dari 3 tahun (${(totalMonths/12).toFixed(1)} tahun).`,
                 pasal: legalReferences.upmk.pasal
             });
         }
@@ -395,7 +358,6 @@ function performCalculation() {
         });
     }
 
-    // UPH
     if (reasonData.uph) {
         uphResult = calculateUPH(monthlyWage, remainingLeave, repatriationCost, otherUPH);
     } else {
@@ -406,7 +368,6 @@ function performCalculation() {
         });
     }
 
-    // PKWT
     if (reasonData.pkwt && employmentStatus === 'PKWT') {
         pkwtResult = calculatePKWTCompensation(pkwtDuration, monthlyWage);
     }
@@ -420,22 +381,18 @@ function performCalculation() {
     });
 }
 
-// ============================================
-// DISPLAY RESULTS
-// ============================================
-
+// Display Results
 function displayResults(data) {
     document.getElementById('formSection').style.display = 'none';
     document.getElementById('resultSection').style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     const now = new Date();
-    document.getElementById('resultDate').textContent = `Dihitung pada: ${now.toLocaleDateString('id-ID', { 
+    document.getElementById('resultDate').textContent = now.toLocaleDateString('id-ID', { 
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
-    })}`;
+    });
 
-    // Employee Summary
-    const statusLabel = data.employmentStatus === 'PKWTT' ? 'PKWTT (Tetap)' : 'PKWT (Kontrak)';
+    const statusLabel = data.employmentStatus === 'PKWTT' ? 'PKWTT — Tetap' : 'PKWT — Kontrak';
     document.getElementById('employeeSummary').innerHTML = `
         <h4>Ringkasan Karyawan</h4>
         <div class="summary-grid">
@@ -444,122 +401,97 @@ function displayResults(data) {
             <div class="summary-item"><span class="summary-label">Status</span><span class="summary-value">${statusLabel}</span></div>
             <div class="summary-item"><span class="summary-label">Masa Kerja</span><span class="summary-value">${data.years} th ${data.months} bln (${(data.totalMonths/12).toFixed(1)} th)</span></div>
             <div class="summary-item"><span class="summary-label">Gaji Pokok</span><span class="summary-value">${formatIDR(data.basicSalary)}</span></div>
-            <div class="summary-item"><span class="summary-label">Tunjangan Tetap</span><span class="summary-value">${formatIDR(data.fixedAllowance)}</span></div>
-            <div class="summary-item"><span class="summary-label">Upah per Bulan</span><span class="summary-value">${formatIDR(data.monthlyWage)}</span></div>
+            <div class="summary-item"><span class="summary-label">Tunjangan</span><span class="summary-value">${formatIDR(data.fixedAllowance)}</span></div>
+            <div class="summary-item"><span class="summary-label">Upah/Bulan</span><span class="summary-value">${formatIDR(data.monthlyWage)}</span></div>
             <div class="summary-item"><span class="summary-label">Alasan</span><span class="summary-value">${data.reasonData.label}</span></div>
         </div>
     `;
 
-    // UP Section
+    // UP
     const upSection = document.getElementById('upSection');
     if (data.upResult.amount > 0) {
         upSection.style.display = 'block';
         document.getElementById('upAmount').textContent = formatIDR(data.upResult.amount);
         document.getElementById('upExplanation').innerHTML = `
-            Masa kerja <strong>${data.upResult.years.toFixed(1)} tahun</strong> → mendapatkan <strong>${data.upResult.multiplier} bulan upah</strong>.<br>
-            Perhitungan: ${data.upResult.multiplier} × ${formatIDR(data.monthlyWage)} = <strong>${formatIDR(data.upResult.amount)}</strong>
+            Masa kerja <strong>${data.upResult.years.toFixed(1)} tahun</strong> → <strong>${data.upResult.multiplier} bulan upah</strong>.<br>
+            ${data.upResult.multiplier} × ${formatIDR(data.monthlyWage)} = <strong>${formatIDR(data.upResult.amount)}</strong>
         `;
-        // REFERENSI HUKUM di bawah poin UP
         document.getElementById('upReference').innerHTML = `
             <div class="ref-pasal">${legalReferences.up.pasal} PP No. 35 Tahun 2021</div>
             <div class="ref-text">${legalReferences.up.text}</div>
         `;
-    } else {
-        upSection.style.display = 'none';
-    }
+    } else { upSection.style.display = 'none'; }
 
-    // UPMK Section
+    // UPMK
     const upmkSection = document.getElementById('upmkSection');
     if (data.upmkResult.amount > 0) {
         upmkSection.style.display = 'block';
         document.getElementById('upmkAmount').textContent = formatIDR(data.upmkResult.amount);
         document.getElementById('upmkExplanation').innerHTML = `
-            Masa kerja <strong>${data.upmkResult.years.toFixed(1)} tahun</strong> → mendapatkan <strong>${data.upmkResult.multiplier} bulan upah</strong>.<br>
-            Perhitungan: ${data.upmkResult.multiplier} × ${formatIDR(data.monthlyWage)} = <strong>${formatIDR(data.upmkResult.amount)}</strong>
+            Masa kerja <strong>${data.upmkResult.years.toFixed(1)} tahun</strong> → <strong>${data.upmkResult.multiplier} bulan upah</strong>.<br>
+            ${data.upmkResult.multiplier} × ${formatIDR(data.monthlyWage)} = <strong>${formatIDR(data.upmkResult.amount)}</strong>
         `;
-        // REFERENSI HUKUM di bawah poin UPMK
         document.getElementById('upmkReference').innerHTML = `
             <div class="ref-pasal">${legalReferences.upmk.pasal} PP No. 35 Tahun 2021</div>
             <div class="ref-text">${legalReferences.upmk.text}</div>
         `;
-    } else {
-        upmkSection.style.display = 'none';
-    }
+    } else { upmkSection.style.display = 'none'; }
 
-    // UPH Section
+    // UPH
     const uphSection = document.getElementById('uphResultSection');
     if (data.uphResult.amount > 0 || data.reasonData.uph) {
         uphSection.style.display = 'block';
         document.getElementById('uphAmount').textContent = formatIDR(data.uphResult.amount);
-
         let uphHTML = '';
         if (data.uphResult.remainingLeave > 0) {
-            uphHTML += `<div class="uph-breakdown-item"><span class="uph-breakdown-label">Cuti terhutang (${data.uphResult.remainingLeave} hari × ${formatIDR(data.uphResult.dailyWage)}/hari)</span><span class="uph-breakdown-value">${formatIDR(data.uphResult.leaveCompensation)}</span></div>`;
+            uphHTML += `<div class="uph-breakdown-item"><span class="uph-breakdown-label">Cuti terhutang (${data.uphResult.remainingLeave} hari × ${formatIDR(data.uphResult.dailyWage)})</span><span class="uph-breakdown-value">${formatIDR(data.uphResult.leaveCompensation)}</span></div>`;
         }
         if (data.uphResult.repatriationCost > 0) {
-            uphHTML += `<div class="uph-breakdown-item"><span class="uph-breakdown-label">Ongkos pulang ke tempat asal</span><span class="uph-breakdown-value">${formatIDR(data.uphResult.repatriationCost)}</span></div>`;
+            uphHTML += `<div class="uph-breakdown-item"><span class="uph-breakdown-label">Ongkos pulang</span><span class="uph-breakdown-value">${formatIDR(data.uphResult.repatriationCost)}</span></div>`;
         }
         if (data.uphResult.otherUPH > 0) {
-            uphHTML += `<div class="uph-breakdown-item"><span class="uph-breakdown-label">Penggantian hak lainnya</span><span class="uph-breakdown-value">${formatIDR(data.uphResult.otherUPH)}</span></div>`;
+            uphHTML += `<div class="uph-breakdown-item"><span class="uph-breakdown-label">Lainnya</span><span class="uph-breakdown-value">${formatIDR(data.uphResult.otherUPH)}</span></div>`;
         }
-        if (uphHTML === '') {
-            uphHTML = '<p class="uph-breakdown-item"><em>Tidak ada komponen UPH yang diisi.</em></p>';
-        }
+        if (uphHTML === '') uphHTML = '<p style="font-size:13px;color:#6b6b69;"><em>Tidak ada komponen UPH yang diisi.</em></p>';
         document.getElementById('uphBreakdown').innerHTML = uphHTML;
-
-        // REFERENSI HUKUM di bawah poin UPH
         document.getElementById('uphReference').innerHTML = `
             <div class="ref-pasal">${legalReferences.uph.pasal} PP No. 35 Tahun 2021</div>
             <div class="ref-text">${legalReferences.uph.text}</div>
         `;
-    } else {
-        uphSection.style.display = 'none';
-    }
+    } else { uphSection.style.display = 'none'; }
 
-    // PKWT Section
+    // PKWT
     const pkwtSection = document.getElementById('pkwtSection');
     if (data.pkwtResult.amount > 0) {
         pkwtSection.style.display = 'block';
         document.getElementById('pkwtAmount').textContent = formatIDR(data.pkwtResult.amount);
         document.getElementById('pkwtExplanation').innerHTML = `
-            Masa kontrak <strong>${data.pkwtResult.months} bulan</strong> → kompensasi <strong>${data.pkwtResult.multiplier.toFixed(2)} bulan upah</strong>.<br>
-            Perhitungan: (${data.pkwtResult.months}/12) × ${formatIDR(data.monthlyWage)} = <strong>${formatIDR(data.pkwtResult.amount)}</strong>
+            Masa kontrak <strong>${data.pkwtResult.months} bulan</strong> → <strong>${data.pkwtResult.multiplier.toFixed(2)} bulan upah</strong>.<br>
+            (${data.pkwtResult.months}/12) × ${formatIDR(data.monthlyWage)} = <strong>${formatIDR(data.pkwtResult.amount)}</strong>
         `;
-        // REFERENSI HUKUM di bawah poin PKWT
         document.getElementById('pkwtReference').innerHTML = `
             <div class="ref-pasal">${legalReferences.pkwt.pasal} PP No. 35 Tahun 2021</div>
             <div class="ref-text">${legalReferences.pkwt.text}</div>
         `;
-    } else {
-        pkwtSection.style.display = 'none';
-    }
+    } else { pkwtSection.style.display = 'none'; }
 
-    // Not Eligible Section
+    // Not Eligible
     const notEligibleSection = document.getElementById('notEligibleSection');
     if (data.notEligibleItems.length > 0) {
         notEligibleSection.style.display = 'block';
         document.getElementById('notEligibleList').innerHTML = data.notEligibleItems.map(item => `
-            <li>
-                <strong>${item.name}</strong>
-                <small>${item.reason}</small>
-                <small style="display:block;color:#999;margin-top:2px;">Dasar: ${item.pasal}</small>
-            </li>
+            <li><strong>${item.name}</strong><small>${item.reason}</small><small style="display:block;color:#999;margin-top:2px;">${item.pasal}</small></li>
         `).join('');
-    } else {
-        notEligibleSection.style.display = 'none';
-    }
+    } else { notEligibleSection.style.display = 'none'; }
 
     // Total
     document.getElementById('totalAmount').textContent = formatIDR(data.totalAmount);
     document.getElementById('totalTerbilang').textContent = formatTerbilang(data.totalAmount);
 }
 
-// ============================================
-// EVENT LISTENERS
-// ============================================
-
+// Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
-    // Currency input formatting
+    // Currency formatting
     document.querySelectorAll('.currency-input').forEach(input => {
         input.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\./g, '').replace(/[^0-9]/g, '');
@@ -567,7 +499,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Employment status change
+    // Employment status
     document.getElementById('employmentStatus').addEventListener('change', function() {
         const pkwtGroup = document.getElementById('pkwtDurationGroup');
         if (this.value === 'PKWT') {
@@ -580,39 +512,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Termination category change (dropdown bertingkat)
+    // Category change
     document.getElementById('terminationCategory').addEventListener('change', function() {
         populateReasonDropdown(this.value);
-        document.getElementById('reasonInfoRow').style.display = 'none';
+        document.getElementById('reasonInfoPanel').style.display = 'none';
     });
 
-    // Termination reason change
+    // Reason change
     document.getElementById('terminationReason').addEventListener('change', function() {
         showReasonInfo(this.value);
     });
 
-    // Calculate button
+    // Calculate
     document.getElementById('calculateBtn').addEventListener('click', performCalculation);
 
-    // Reset button
+    // Reset
     document.getElementById('resetBtn').addEventListener('click', function() {
-        document.querySelectorAll('input, select').forEach(el => {
-            el.value = '';
-        });
+        document.querySelectorAll('input, select').forEach(el => { el.value = ''; });
         document.getElementById('pkwtDurationGroup').style.display = 'none';
-        document.getElementById('subCategoryRow').style.display = 'none';
-        document.getElementById('reasonInfoRow').style.display = 'none';
+        document.getElementById('subCategoryGroup').style.display = 'none';
+        document.getElementById('reasonInfoPanel').style.display = 'none';
         document.getElementById('terminationReason').innerHTML = '<option value="" disabled selected>Pilih alasan</option>';
     });
 
-    // Recalculate button
+    // Recalculate
     document.getElementById('recalculateBtn').addEventListener('click', function() {
         document.getElementById('resultSection').style.display = 'none';
         document.getElementById('formSection').style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Print button
+    // Print
     document.getElementById('printBtn').addEventListener('click', function() {
         window.print();
     });

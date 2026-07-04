@@ -6,251 +6,269 @@
     <title>Termination Benefit Calculator | YM-ID Tools</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <div class="logo">
-                <a href="/tools">← Kembali ke Tools</a>
-            </div>
+            <a href="/tools" class="back-link">← Tools</a>
             <h1>Termination Benefit Calculator</h1>
-            <p class="subtitle">Hitung estimasi hak karyawan berdasarkan <strong>PP No. 35 Tahun 2021</strong></p>
+            <p class="subtitle">Estimasi hak karyawan berdasarkan <span class="highlight">PP No. 35 Tahun 2021</span></p>
         </header>
 
         <!-- Main Content -->
         <main class="main-content">
             <!-- Form Section -->
             <section class="form-section" id="formSection">
-                <div class="card">
-                    <h2>Informasi Karyawan</h2>
 
-                    <!-- Row 1: Basic Info -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="employeeName">Nama Karyawan <span class="optional">(opsional)</span></label>
-                            <input type="text" id="employeeName" placeholder="Contoh: Budi Santoso">
-                        </div>
-                        <div class="form-group">
-                            <label for="position">Jabatan <span class="optional">(opsional)</span></label>
-                            <input type="text" id="position" placeholder="Contoh: Staff Marketing">
-                        </div>
+                <!-- Section 1: Data Karyawan -->
+                <div class="section-block">
+                    <div class="section-header">
+                        <span class="section-number">01</span>
+                        <h2>Data Karyawan</h2>
                     </div>
 
-                    <!-- Row 2: Employment Status -->
-                    <div class="form-row">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="employeeName">Nama Karyawan</label>
+                            <input type="text" id="employeeName" placeholder="Nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Jabatan</label>
+                            <input type="text" id="position" placeholder="Jabatan saat ini">
+                        </div>
                         <div class="form-group">
                             <label for="employmentStatus">Status Kepegawaian <span class="required">*</span></label>
                             <select id="employmentStatus" required>
                                 <option value="" disabled selected>Pilih status</option>
-                                <option value="PKWTT">PKWTT (Tetap)</option>
-                                <option value="PKWT">PKWT (Kontrak)</option>
+                                <option value="PKWTT">PKWTT — Tetap</option>
+                                <option value="PKWT">PKWT — Kontrak</option>
                             </select>
                         </div>
                         <div class="form-group" id="pkwtDurationGroup" style="display:none;">
-                            <label for="pkwtDuration">Lama Kontrak PKWT (bulan) <span class="required">*</span></label>
-                            <input type="number" id="pkwtDuration" min="1" max="60" placeholder="Contoh: 12">
+                            <label for="pkwtDuration">Lama Kontrak (bulan) <span class="required">*</span></label>
+                            <input type="number" id="pkwtDuration" min="1" max="60" placeholder="12">
                         </div>
                     </div>
+                </div>
 
-                    <!-- Row 3: Service Period -->
-                    <div class="form-row">
+                <!-- Section 2: Masa Kerja & Gaji -->
+                <div class="section-block">
+                    <div class="section-header">
+                        <span class="section-number">02</span>
+                        <h2>Masa Kerja & Gaji</h2>
+                    </div>
+
+                    <div class="form-grid">
                         <div class="form-group">
                             <label>Masa Kerja <span class="required">*</span></label>
-                            <div class="input-group">
-                                <input type="number" id="yearsOfService" min="0" max="50" placeholder="Tahun" required>
-                                <span class="separator">tahun</span>
-                                <input type="number" id="monthsOfService" min="0" max="11" placeholder="Bulan" required>
-                                <span class="separator">bulan</span>
+                            <div class="input-pair">
+                                <input type="number" id="yearsOfService" min="0" max="50" placeholder="0" required>
+                                <span class="unit">tahun</span>
+                                <input type="number" id="monthsOfService" min="0" max="11" placeholder="0" required>
+                                <span class="unit">bulan</span>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Row 4: Salary -->
-                    <div class="form-row">
                         <div class="form-group">
-                            <label for="basicSalary">Gaji Pokok (per bulan) <span class="required">*</span></label>
-                            <div class="input-prefix">
-                                <span class="prefix">Rp</span>
+                            <label for="basicSalary">Gaji Pokok <span class="required">*</span></label>
+                            <div class="input-currency">
+                                <span class="currency">Rp</span>
                                 <input type="text" id="basicSalary" class="currency-input" placeholder="0" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="fixedAllowance">Tunjangan Tetap (per bulan) <span class="required">*</span></label>
-                            <div class="input-prefix">
-                                <span class="prefix">Rp</span>
+                            <label for="fixedAllowance">Tunjangan Tetap <span class="required">*</span></label>
+                            <div class="input-currency">
+                                <span class="currency">Rp</span>
                                 <input type="text" id="fixedAllowance" class="currency-input" placeholder="0" required>
                             </div>
-                            <small class="hint">Termasuk tunjangan transportasi, makan, dll yang tetap</small>
+                            <span class="helper">Transport, makan, dll</span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Row 5: Termination Reason - DROPDOWN BERTINGKAT -->
-                    <div class="form-row">
+                <!-- Section 3: Alasan Terminasi -->
+                <div class="section-block">
+                    <div class="section-header">
+                        <span class="section-number">03</span>
+                        <h2>Alasan Terminasi</h2>
+                    </div>
+
+                    <div class="form-grid">
                         <div class="form-group">
-                            <label>Kategori Terminasi <span class="required">*</span></label>
+                            <label>Kategori <span class="required">*</span></label>
                             <select id="terminationCategory" required>
                                 <option value="" disabled selected>Pilih kategori</option>
-                                <option value="phk_perusahaan">📋 PHK oleh Perusahaan</option>
-                                <option value="phk_pekerja">👤 PHK oleh Pekerja</option>
-                                <option value="berakhir">🔄 Berakhirnya Hubungan Kerja</option>
+                                <option value="phk_perusahaan">PHK oleh Perusahaan</option>
+                                <option value="phk_pekerja">PHK oleh Pekerja</option>
+                                <option value="berakhir">Berakhirnya Hubungan Kerja</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div class="form-row" id="subCategoryRow" style="display:none;">
-                        <div class="form-group">
-                            <label>Alasan Terminasi <span class="required">*</span></label>
+                        <div class="form-group" id="subCategoryGroup" style="display:none;">
+                            <label>Alasan Detail <span class="required">*</span></label>
                             <select id="terminationReason" required>
                                 <option value="" disabled selected>Pilih alasan</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="form-row" id="reasonInfoRow" style="display:none;">
-                        <div class="form-group full-width">
-                            <div class="reason-info-box" id="reasonInfoBox">
-                                <p id="reasonDescription"></p>
-                                <span class="reason-pasal" id="reasonPasal"></span>
-                            </div>
-                        </div>
+                    <div class="info-panel" id="reasonInfoPanel" style="display:none;">
+                        <p id="reasonDescription"></p>
+                        <span class="info-tag" id="reasonPasal"></span>
+                    </div>
+                </div>
+
+                <!-- Section 4: Hak Tambahan (UPH) -->
+                <div class="section-block">
+                    <div class="section-header">
+                        <span class="section-number">04</span>
+                        <h2>Hak Tambahan (UPH)</h2>
                     </div>
 
-                    <!-- Row 6: UPH Details -->
-                    <div class="form-row" id="uphSection">
+                    <div class="form-grid">
                         <div class="form-group">
-                            <label for="remainingLeave">Sisa Cuti Tahunan (hari)</label>
+                            <label for="remainingLeave">Sisa Cuti (hari)</label>
                             <input type="number" id="remainingLeave" min="0" max="365" placeholder="0">
                         </div>
                         <div class="form-group">
-                            <label for="repatriationCost">Ongkos Pulang ke Tempat Asal</label>
-                            <div class="input-prefix">
-                                <span class="prefix">Rp</span>
+                            <label for="repatriationCost">Ongkos Pulang</label>
+                            <div class="input-currency">
+                                <span class="currency">Rp</span>
                                 <input type="text" id="repatriationCost" class="currency-input" placeholder="0">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="otherUPH">Penggantian Hak Lainnya</label>
-                            <div class="input-prefix">
-                                <span class="prefix">Rp</span>
+                            <label for="otherUPH">Lainnya (PK/PKB)</label>
+                            <div class="input-currency">
+                                <span class="currency">Rp</span>
                                 <input type="text" id="otherUPH" class="currency-input" placeholder="0">
                             </div>
-                            <small class="hint">Sesuai PK/PKB/Perjanjian</small>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Submit Button -->
-                    <div class="form-actions">
-                        <button type="button" class="btn-primary" id="calculateBtn">
-                            <span class="btn-icon">🧮</span>
-                            Hitung Estimasi Hak
-                        </button>
-                        <button type="button" class="btn-secondary" id="resetBtn">Reset</button>
-                    </div>
+                <!-- Actions -->
+                <div class="actions">
+                    <button type="button" class="btn-primary" id="calculateBtn">
+                        Hitung Estimasi
+                    </button>
+                    <button type="button" class="btn-text" id="resetBtn">Reset</button>
                 </div>
             </section>
 
             <!-- Result Section -->
             <section class="result-section" id="resultSection" style="display:none;">
-                <div class="card result-card">
-                    <div class="result-header">
-                        <h2>📊 Hasil Perhitungan</h2>
-                        <p class="result-date" id="resultDate"></p>
-                    </div>
 
-                    <div class="employee-summary" id="employeeSummary"></div>
+                <!-- Result Header -->
+                <div class="result-title">
+                    <h2>Hasil Perhitungan</h2>
+                    <span class="result-meta" id="resultDate"></span>
+                </div>
 
-                    <div class="calculation-details">
-                        <!-- UP Section -->
-                        <div class="detail-item" id="upSection">
-                            <div class="detail-header">
-                                <h3>💰 Uang Pesangon (UP)</h3>
-                                <span class="detail-amount" id="upAmount">Rp 0</span>
+                <!-- Employee Summary -->
+                <div class="summary-card" id="employeeSummary"></div>
+
+                <!-- Calculation Results -->
+                <div class="results-list">
+
+                    <!-- UP -->
+                    <div class="result-item" id="upSection">
+                        <div class="result-item-header">
+                            <div class="result-item-title">
+                                <span class="result-icon">●</span>
+                                <span>Uang Pesangon (UP)</span>
                             </div>
-                            <div class="detail-body">
-                                <p id="upExplanation"></p>
-                                <div class="detail-reference" id="upReference"></div>
-                            </div>
+                            <span class="result-item-value" id="upAmount">Rp 0</span>
                         </div>
-
-                        <!-- UPMK Section -->
-                        <div class="detail-item" id="upmkSection">
-                            <div class="detail-header">
-                                <h3>🏅 Uang Penghargaan Masa Kerja (UPMK)</h3>
-                                <span class="detail-amount" id="upmkAmount">Rp 0</span>
-                            </div>
-                            <div class="detail-body">
-                                <p id="upmkExplanation"></p>
-                                <div class="detail-reference" id="upmkReference"></div>
-                            </div>
-                        </div>
-
-                        <!-- UPH Section -->
-                        <div class="detail-item" id="uphResultSection">
-                            <div class="detail-header">
-                                <h3>📋 Uang Penggantian Hak (UPH)</h3>
-                                <span class="detail-amount" id="uphAmount">Rp 0</span>
-                            </div>
-                            <div class="detail-body">
-                                <div id="uphBreakdown"></div>
-                                <div class="detail-reference" id="uphReference"></div>
-                            </div>
-                        </div>
-
-                        <!-- PKWT Compensation Section -->
-                        <div class="detail-item" id="pkwtSection" style="display:none;">
-                            <div class="detail-header">
-                                <h3>📄 Kompensasi PKWT</h3>
-                                <span class="detail-amount" id="pkwtAmount">Rp 0</span>
-                            </div>
-                            <div class="detail-body">
-                                <p id="pkwtExplanation"></p>
-                                <div class="detail-reference" id="pkwtReference"></div>
-                            </div>
-                        </div>
-
-                        <!-- Not Eligible Section -->
-                        <div class="detail-item not-eligible" id="notEligibleSection" style="display:none;">
-                            <div class="detail-header">
-                                <h3>❌ Komponen yang Tidak Diterima</h3>
-                            </div>
-                            <div class="detail-body">
-                                <ul id="notEligibleList"></ul>
-                            </div>
+                        <div class="result-item-body">
+                            <p id="upExplanation"></p>
+                            <div class="legal-ref" id="upReference"></div>
                         </div>
                     </div>
 
-                    <!-- Total Section -->
-                    <div class="total-section">
-                        <div class="total-row">
-                            <span class="total-label">TOTAL ESTIMASI HAK</span>
-                            <span class="total-amount" id="totalAmount">Rp 0</span>
+                    <!-- UPMK -->
+                    <div class="result-item" id="upmkSection">
+                        <div class="result-item-header">
+                            <div class="result-item-title">
+                                <span class="result-icon">●</span>
+                                <span>Uang Penghargaan Masa Kerja (UPMK)</span>
+                            </div>
+                            <span class="result-item-value" id="upmkAmount">Rp 0</span>
                         </div>
-                        <p class="total-terbilang" id="totalTerbilang"></p>
+                        <div class="result-item-body">
+                            <p id="upmkExplanation"></p>
+                            <div class="legal-ref" id="upmkReference"></div>
+                        </div>
                     </div>
 
-                    <!-- Disclaimer -->
-                    <div class="disclaimer">
-                        <p><strong>⚠️ Disclaimer:</strong> Hasil perhitungan ini bersifat <strong>estimasi</strong> berdasarkan PP No. 35 Tahun 2021. Jumlah final dapat berbeda tergantung kebijakan internal perusahaan, Perjanjian Kerja Bersama (PKB), atau ketentuan lain yang berlaku di perusahaan Anda. Untuk kepastian hukum, konsultasikan dengan HR atau konsultan hukum ketenagakerjaan.</p>
+                    <!-- UPH -->
+                    <div class="result-item" id="uphResultSection">
+                        <div class="result-item-header">
+                            <div class="result-item-title">
+                                <span class="result-icon">●</span>
+                                <span>Uang Penggantian Hak (UPH)</span>
+                            </div>
+                            <span class="result-item-value" id="uphAmount">Rp 0</span>
+                        </div>
+                        <div class="result-item-body">
+                            <div id="uphBreakdown"></div>
+                            <div class="legal-ref" id="uphReference"></div>
+                        </div>
                     </div>
 
-                    <!-- Action Buttons -->
-                    <div class="result-actions">
-                        <button type="button" class="btn-primary" id="printBtn">
-                            <span class="btn-icon">🖨️</span> Cetak / Simpan PDF
-                        </button>
-                        <button type="button" class="btn-secondary" id="recalculateBtn">
-                            <span class="btn-icon">🔄</span> Hitung Ulang
-                        </button>
+                    <!-- PKWT -->
+                    <div class="result-item" id="pkwtSection" style="display:none;">
+                        <div class="result-item-header">
+                            <div class="result-item-title">
+                                <span class="result-icon">●</span>
+                                <span>Kompensasi PKWT</span>
+                            </div>
+                            <span class="result-item-value" id="pkwtAmount">Rp 0</span>
+                        </div>
+                        <div class="result-item-body">
+                            <p id="pkwtExplanation"></p>
+                            <div class="legal-ref" id="pkwtReference"></div>
+                        </div>
                     </div>
+
+                    <!-- Not Eligible -->
+                    <div class="result-item excluded" id="notEligibleSection" style="display:none;">
+                        <div class="result-item-header">
+                            <div class="result-item-title">
+                                <span class="result-icon">○</span>
+                                <span>Tidak Diterima</span>
+                            </div>
+                        </div>
+                        <div class="result-item-body">
+                            <ul id="notEligibleList"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total -->
+                <div class="total-box">
+                    <div class="total-label">Total Estimasi Hak</div>
+                    <div class="total-value" id="totalAmount">Rp 0</div>
+                    <div class="total-words" id="totalTerbilang"></div>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="disclaimer-box">
+                    <p><strong>Disclaimer.</strong> Hasil perhitungan bersifat estimasi berdasarkan PP No. 35 Tahun 2021. Jumlah final dapat berbeda tergantung kebijakan internal perusahaan, PKB, atau ketentuan lain.</p>
+                </div>
+
+                <!-- Actions -->
+                <div class="result-actions">
+                    <button type="button" class="btn-primary" id="printBtn">Cetak / Simpan PDF</button>
+                    <button type="button" class="btn-text" id="recalculateBtn">Hitung Ulang</button>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
-            <p>Termination Benefit Calculator berdasarkan PP No. 35 Tahun 2021</p>
-            <p>Yan Firdaus | YM-ID | Business, People & Digital Solutions</p>
+            <p>Termination Benefit Calculator</p>
+            <p>YM-ID — Business, People & Digital Solutions</p>
         </footer>
     </div>
 
