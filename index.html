@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termination calculator | PP No. 35 Tahun 2021</title>
+    <title>Termination Benefit Calculator | PP No. 35 Tahun 2021</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,8 +40,8 @@
                             <label for="employmentStatus">Status Kepegawaian <span class="required">*</span></label>
                             <select id="employmentStatus" required>
                                 <option value="" disabled selected>Pilih status</option>
-                                <option value="PKWTT">PKWTT - TETAP</option>
-                                <option value="PKWT">PKWT - KONTRAK</option>
+                                <option value="PKWTT">PKWTT - Tetap</option>
+                                <option value="PKWT">PKWT - Kontrak</option>
                             </select>
                         </div>
                         <div class="form-group" id="pkwtDurationGroup" style="display:none;">
@@ -92,15 +92,15 @@
                     </div>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label>Kategori<span class="required">*</span></label>
+                            <label>Kategori <span class="required">*</span></label>
                             <select id="terminationCategory" required>
                                 <option value="" disabled selected>Pilih kategori</option>
                                 <option value="phk_perusahaan">PHK oleh Perusahaan</option>
-                                <option value="phk_pekerja">PHK oleh Pekerja / Berakhirnya HK</option>
+                                <option value="phk_pekerja">PHK oleh Pekerja / Berakhirnya Hubungan Kerja</option>
                             </select>
                         </div>
                         <div class="form-group" id="subCategoryGroup" style="display:none;">
-                            <label>Detil PHK <span class="required">*</span></label>
+                            <label>Alasan Detail <span class="required">*</span></label>
                             <select id="terminationReason" required>
                                 <option value="" disabled selected>Pilih alasan</option>
                             </select>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
 
-                <!-- Section 4: Pola Kerja & Sisa Cuti Tahunan -->
+                <!-- Section 4: Pola Kerja & Sisa Cuti -->
                 <div class="section-block">
                     <div class="section-header">
                         <span class="section-number">04</span>
@@ -226,6 +226,15 @@
                     <div class="total-words" id="totalTerbilang"></div>
                 </div>
 
+                <!-- Lampiran Hukum -->
+                <div class="lampiran-section" id="lampiranSection">
+                    <div class="lampiran-header">
+                        <h3>LAMPIRAN</h3>
+                        <p>Landasan Hukum Perhitungan Hak Karyawan</p>
+                    </div>
+                    <div class="lampiran-content" id="lampiranContent"></div>
+                </div>
+
                 <div class="result-actions">
                     <button type="button" class="btn-primary" id="printBtn">Cetak / Simpan PDF</button>
                     <button type="button" class="btn-text" id="recalculateBtn">Hitung Ulang</button>
@@ -234,8 +243,8 @@
         </main>
 
         <footer class="footer">
-            <p>Termination Benefit Calculator | PP No.35 Tahun 2021</p>
-            <p>Created by Yan Firdaus | www.ym-id.com | yan@ym-id.com | 0817393994</p>
+            <p>Termination Benefit Calculator | PP 35 Tahun 2021</p>
+            <p>Created by Yan Firdaus | yan@ym-id.com | www.ym-id.com | +62-817-39-39-94</p>
         </footer>
     </div>
 

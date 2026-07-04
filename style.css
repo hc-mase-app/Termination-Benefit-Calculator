@@ -1,5 +1,5 @@
 /* ============================================
-   Termination Benefit Calculator - Simplified
+   Kalkulator PHK - Simplified
    ============================================ */
 
 :root {
@@ -472,6 +472,68 @@ select {
     justify-content: center;
 }
 
+/* Lampiran Section */
+.lampiran-section {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    page-break-before: always;
+    break-before: page;
+}
+
+.lampiran-header {
+    background: var(--charcoal);
+    color: var(--white);
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.lampiran-header h3 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.lampiran-header p {
+    font-size: 11px;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+.lampiran-content {
+    padding: 0;
+    background: var(--white);
+}
+
+.lampiran-pasal {
+    border-bottom: 1px solid var(--border);
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.lampiran-pasal:last-child { border-bottom: none; }
+
+.lampiran-pasal-title {
+    background: var(--gray-100);
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--charcoal);
+    border-left: 3px solid var(--coral);
+}
+
+.lampiran-pasal-content {
+    padding: 12px 16px;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    white-space: pre-line;
+}
+
 /* Footer */
 .footer {
     text-align: center;
@@ -680,8 +742,54 @@ select {
     .total-value { font-size: 14pt !important; margin-bottom: 1px !important; }
     .total-words { font-size: 7pt !important; }
 
+    /* Lampiran Print */
+    .lampiran-section {
+        display: block !important;
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        border: 1px solid #333 !important;
+        border-radius: 0 !important;
+    }
+
+    .lampiran-header {
+        background: #1a1a2e !important;
+        color: white !important;
+        padding: 6px 10px !important;
+        border-bottom: 1.5px solid #1a1a2e !important;
+    }
+
+    .lampiran-header h3 {
+        font-size: 10pt !important;
+        margin-bottom: 1px !important;
+    }
+
+    .lampiran-header p {
+        font-size: 7.5pt !important;
+    }
+
+    .lampiran-pasal {
+        border-bottom: 1px solid #ddd !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .lampiran-pasal-title {
+        background: #f5f5f3 !important;
+        padding: 3px 10px !important;
+        font-size: 8.5pt !important;
+        border-left: 2px solid #e85d4e !important;
+    }
+
+    .lampiran-pasal-content {
+        padding: 5px 10px !important;
+        font-size: 7pt !important;
+        line-height: 1.3 !important;
+        color: #333 !important;
+    }
+
     .result-section::after {
-        content: "Dokumen dihasilkan oleh Termination Benefit Calculator | PP No. 35 Tahun 2021";
+        content: "Dokumen dihasilkan oleh Kalkulator PHK | PP No. 35 Tahun 2021";
         display: block;
         text-align: center;
         font-size: 6.5pt;
@@ -729,9 +837,3 @@ select {
     .section-number { width: 24px; height: 24px; font-size: 11px; }
     .section-header h2 { font-size: 14px; }
 }
-
-/* Structural */
-.main-content { display: block; }
-
-/* Currency input class for JS selection */
-.currency-input { /* styling inherited from input */ }

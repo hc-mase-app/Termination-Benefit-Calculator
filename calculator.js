@@ -14,103 +14,120 @@ const terminationData = {
                 label: "Merger / Peleburan / Penggabungan / Pemisahan",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 1.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 41 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 41 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_41"
             },
             phk_akuisisi: {
                 label: "Akuisisi / Pengambilalihan",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 0.5, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 42 ayat (2) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 42 ayat (2) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_42_2"
             },
             phk_efisiensi_rugi: {
                 label: "Efisiensi (Karena Rugi)",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 0.5, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 43 ayat (1) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 43 ayat (1) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_43_1"
             },
             phk_efisiensi_cegah_rugi: {
                 label: "Efisiensi (Cegah Rugi)",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 1.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 43 ayat (2) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 43 ayat (2) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_43_2"
             },
             phk_tutup_rugi_2th: {
                 label: "Penutupan (Rugi 2 Tahun)",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 0.5, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 44 ayat (1) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 44 ayat (1) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_44_1"
             },
             phk_tutup_bukan_rugi: {
                 label: "Penutupan (Bukan Karena Rugi)",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 1.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 44 ayat (2) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 44 ayat (2) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_44_2"
             },
             phk_force_majeure_tutup: {
                 label: "Force Majeure (Perusahaan Tutup)",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 0.5, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 45 ayat (1) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 45 ayat (1) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_45_1"
             },
             phk_force_majeure_tidak_tutup: {
                 label: "Force Majeure (Tidak Tutup)",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 0.75, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 45 ayat (2) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 45 ayat (2) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_45_2"
             },
             phk_pkpu_rugi: {
                 label: "PKPU (Karena Rugi)",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 0.5, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 46 ayat (1) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 46 ayat (1) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_46_1"
             },
             phk_pkpu_bukan_rugi: {
                 label: "PKPU (Bukan Karena Rugi)",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 1.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 46 ayat (2) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 46 ayat (2) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_46_2"
             },
             phk_pailit: {
                 label: "Pailit",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 1.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 47 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 47 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_47"
             },
             phk_sakit: {
                 label: "Sakit Berkepanjangan / Cacat Kecelakaan Kerja (>12 Bulan)",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 2.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 55 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 55 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_55"
             },
             phk_ditahan_rugi: {
                 label: "Ditahan >6 Bulan (Menyebabkan Kerugian)",
                 up: false, upmk: false, uph: true,
                 up_multiplier: 0, upmk_multiplier: 0,
-                detail_pasal: "Pasal 54 ayat (1) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 54 ayat (1) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_54_1"
             },
             phk_ditahan_tidak_rugi: {
                 label: "Ditahan >6 Bulan (Tidak Menyebabkan Kerugian)",
                 up: false, upmk: true, uph: true,
                 up_multiplier: 0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 54 ayat (2) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 54 ayat (2) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_54_2"
             },
             phk_kesalahan_berat: {
                 label: "Kesalahan Berat (3x SP)",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 0.5, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 52 ayat (1) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 52 ayat (1) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_52_1"
             },
             phk_pelanggaran_mendesak: {
                 label: "Pelanggaran Mendesak",
                 up: false, upmk: false, uph: true,
                 up_multiplier: 0, upmk_multiplier: 0,
-                detail_pasal: "Pasal 52 ayat (2) PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 52 ayat (2) PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_52_2"
             },
             phk_tidak_masuk: {
                 label: "Mangkir >5 Hari Kerja",
                 up: false, upmk: false, uph: true,
                 up_multiplier: 0, upmk_multiplier: 0,
-                detail_pasal: "Pasal 51 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 51 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_51"
             }
         }
     },
@@ -121,55 +138,64 @@ const terminationData = {
                 label: "Kekerasan / Ancaman / Intimidasi",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 1.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 48 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 48 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_48"
             },
             phk_pekerja_upah: {
                 label: "Upah Tidak Dibayar >3 Bulan",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 1.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 48 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 48 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_48"
             },
             phk_pekerja_kewajiban: {
                 label: "Pengusaha Tidak Menjalankan Kewajiban",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 1.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 48 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 48 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_48"
             },
             phk_pekerja_luar_pk: {
                 label: "Disuruh Kerja di Luar Perjanjian",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 1.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 48 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 48 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_48"
             },
             phk_putusan_lphi: {
                 label: "Putusan LPHI - Pekerja Kalah",
                 up: false, upmk: false, uph: true,
                 up_multiplier: 0, upmk_multiplier: 0,
-                detail_pasal: "Pasal 49 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 49 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_49"
             },
             meninggal: {
                 label: "Meninggal Dunia",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 2.0, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 57 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 57 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_57"
             },
             habis_kontrak: {
                 label: "Habis Masa Kerja (PKWT)",
                 up: false, upmk: false, uph: false, pkwt: true,
                 up_multiplier: 0, upmk_multiplier: 0,
-                detail_pasal: "Pasal 15 & 16 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 15 & 16 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_15_16"
             },
             resign: {
                 label: "Mengundurkan Diri",
                 up: false, upmk: false, uph: true,
                 up_multiplier: 0, upmk_multiplier: 0,
-                detail_pasal: "Pasal 50 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 50 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_50"
             },
             pensiun: {
                 label: "Pensiun",
                 up: true, upmk: true, uph: true,
                 up_multiplier: 1.75, upmk_multiplier: 1.0,
-                detail_pasal: "Pasal 56 PP No. 35 Tahun 2021"
+                detail_pasal: "Pasal 56 PP No. 35 Tahun 2021",
+                lampiran_key: "pasal_56"
             }
         }
     }
@@ -185,6 +211,116 @@ const workPatterns = {
     "6_1":  { label: "6 Hari Kerja, 1 Hari Off", divisor: 22 },
     "5_2":  { label: "5 Hari Kerja, 2 Hari Off", divisor: 21 },
     "4_3":  { label: "4 Hari Kerja, 3 Hari Off", divisor: 18 }
+};
+
+// ============================================================
+// DATA: LAMPIRAN HUKUM (SPESIFIK PER AYAT)
+// ============================================================
+const lampiranHukum = {
+    pasal_36: {
+        judul: "Pasal 36 - Alasan Pemutusan Hubungan Kerja",
+        isi: "Pemutusan Hubungan Kerja dapat terjadi karena alasan penggabungan, peleburan, pengambilalihan, pemisahan, efisiensi, penutupan perusahaan, force majeure, PKPU, pailit, permohonan pekerja, mangkir, pelanggaran ketentuan, ditahan pihak berwajib, sakit berkepanjangan, pensiun, atau meninggal dunia."
+    },
+    pasal_40: {
+        judul: "Pasal 40 - Dasar Perhitungan Uang Pesangon, UPMK, dan UPH",
+        isi: "Dasar perhitungan: Uang Pesangon (1-9 bulan upah sesuai masa kerja), Uang Penghargaan Masa Kerja (2-10 bulan upah untuk masa kerja >=3 tahun), dan Uang Penggantian Hak (cuti, ongkos pulang, dan hak lain)."
+    },
+    pasal_41: {
+        judul: "Pasal 41 PP No. 35 Tahun 2021",
+        isi: "Pengusaha dapat melakukan PHK karena penggabungan, peleburan, atau pemisahan Perusahaan dan pekerja tidak bersedia melanjutkan HK atau pengusaha tidak bersedia menerima. Pekerja berhak: UP 1x Pasal 40 ayat (2), UPMK 1x Pasal 40 ayat (3), UPH sesuai Pasal 40 ayat (4)."
+    },
+    pasal_42_1: {
+        judul: "Pasal 42 ayat (1) PP No. 35 Tahun 2021",
+        isi: "Pengambilalihan Perusahaan: Pekerja berhak UP 1x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_42_2: {
+        judul: "Pasal 42 ayat (2) PP No. 35 Tahun 2021",
+        isi: "Pengambilalihan yang mengakibatkan perubahan syarat kerja dan pekerja tidak bersedia melanjutkan HK: Pekerja berhak UP 0,5x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_43_1: {
+        judul: "Pasal 43 ayat (1) PP No. 35 Tahun 2021",
+        isi: "Efisiensi yang disebabkan perusahaan mengalami kerugian: Pekerja berhak UP 0,5x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_43_2: {
+        judul: "Pasal 43 ayat (2) PP No. 35 Tahun 2021",
+        isi: "Efisiensi untuk mencegah terjadinya kerugian: Pekerja berhak UP 1x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_44_1: {
+        judul: "Pasal 44 ayat (1) PP No. 35 Tahun 2021",
+        isi: "Penutupan perusahaan karena rugi terus menerus selama 2 tahun atau tidak terus menerus selama 2 tahun: Pekerja berhak UP 0,5x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_44_2: {
+        judul: "Pasal 44 ayat (2) PP No. 35 Tahun 2021",
+        isi: "Penutupan perusahaan bukan karena rugi: Pekerja berhak UP 1x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_45_1: {
+        judul: "Pasal 45 ayat (1) PP No. 35 Tahun 2021",
+        isi: "Force majeure yang mengakibatkan perusahaan tutup: Pekerja berhak UP 0,5x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_45_2: {
+        judul: "Pasal 45 ayat (2) PP No. 35 Tahun 2021",
+        isi: "Force majeure yang tidak mengakibatkan perusahaan tutup: Pekerja berhak UP 0,75x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_46_1: {
+        judul: "Pasal 46 ayat (1) PP No. 35 Tahun 2021",
+        isi: "PKPU yang disebabkan perusahaan mengalami kerugian: Pekerja berhak UP 0,5x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_46_2: {
+        judul: "Pasal 46 ayat (2) PP No. 35 Tahun 2021",
+        isi: "PKPU bukan karena perusahaan mengalami kerugian: Pekerja berhak UP 1x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_47: {
+        judul: "Pasal 47 PP No. 35 Tahun 2021",
+        isi: "Pailit: Pekerja berhak UP 1x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_48: {
+        judul: "Pasal 48 PP No. 35 Tahun 2021",
+        isi: "PHK oleh pekerja karena pengusaha melakukan perbuatan (kekerasan, tidak bayar upah >3 bln, tidak jalankan kewajiban, suruh kerja di luar perjanjian): Pekerja berhak UP 1x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_49: {
+        judul: "Pasal 49 PP No. 35 Tahun 2021",
+        isi: "Putusan LPHI menyatakan pengusaha tidak melakukan perbuatan (pekerja kalah): Pekerja berhak UPH dan uang pisah."
+    },
+    pasal_50: {
+        judul: "Pasal 50 PP No. 35 Tahun 2021",
+        isi: "Mengundurkan diri atas kemauan sendiri dengan syarat (surat 30 hari, tidak ikatan dinas, tetap kerja): Pekerja berhak UPH dan uang pisah."
+    },
+    pasal_51: {
+        judul: "Pasal 51 PP No. 35 Tahun 2021",
+        isi: "Mangkir >5 hari kerja berturut-turut tanpa keterangan tertulis + bukti sah, dipanggil 2x patut tertulis: Pekerja berhak UPH dan uang pisah."
+    },
+    pasal_52_1: {
+        judul: "Pasal 52 ayat (1) PP No. 35 Tahun 2021",
+        isi: "Pelanggaran ketentuan dengan SP 1, 2, 3 berturut-turut (berlaku masing-masing paling lama 6 bln): Pekerja berhak UP 0,5x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_52_2: {
+        judul: "Pasal 52 ayat (2) PP No. 35 Tahun 2021",
+        isi: "Pelanggaran bersifat mendesak: Pekerja berhak UPH dan uang pisah."
+    },
+    pasal_54_1: {
+        judul: "Pasal 54 ayat (1) PP No. 35 Tahun 2021",
+        isi: "Ditahan >6 bulan yang menyebabkan kerugian perusahaan: Pekerja berhak UPH dan uang pisah. (Tidak berhak UP & UPMK)"
+    },
+    pasal_54_2: {
+        judul: "Pasal 54 ayat (2) PP No. 35 Tahun 2021",
+        isi: "Ditahan >6 bulan yang tidak menyebabkan kerugian perusahaan: Pekerja berhak UPMK 1x, UPH sesuai ketentuan. (Tidak berhak UP)"
+    },
+    pasal_55: {
+        judul: "Pasal 55 PP No. 35 Tahun 2021",
+        isi: "Sakit berkepanjangan / cacat akibat kecelakaan kerja >12 bulan: Pekerja berhak UP 2x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_56: {
+        judul: "Pasal 56 PP No. 35 Tahun 2021",
+        isi: "Pensiun: Pekerja berhak UP 1,75x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_57: {
+        judul: "Pasal 57 PP No. 35 Tahun 2021",
+        isi: "Meninggal dunia: Ahli waris berhak UP 2x, UPMK 1x, UPH sesuai ketentuan."
+    },
+    pasal_15_16: {
+        judul: "Pasal 15 & 16 PP No. 35 Tahun 2021",
+        isi: "Kompensasi PKWT: Diberikan saat berakhirnya PKWT untuk masa kerja >=1 bulan. Besaran = (masa kerja / 12) x 1 bulan upah (pokok + tunjangan tetap)."
+    }
 };
 
 // ============================================================
@@ -291,6 +427,25 @@ function showReasonInfo(key) {
     document.getElementById('reasonDescription').textContent = data.label;
     document.getElementById('reasonDetailPasal').textContent = data.detail_pasal;
     panel.style.display = 'block';
+}
+
+function buildLampiran(reasonData) {
+    const content = document.getElementById('lampiranContent');
+    let relevant = ['pasal_36', 'pasal_40'];
+    if (reasonData.lampiran_key && !relevant.includes(reasonData.lampiran_key)) {
+        relevant.push(reasonData.lampiran_key);
+    }
+    let html = '';
+    relevant.forEach(function(key) {
+        const p = lampiranHukum[key];
+        if (p) {
+            html += '<div class="lampiran-pasal">' +
+                '<div class="lampiran-pasal-title">' + p.judul + '</div>' +
+                '<div class="lampiran-pasal-content">' + p.isi + '</div>' +
+                '</div>';
+        }
+    });
+    content.innerHTML = html;
 }
 
 // ============================================================
@@ -420,6 +575,9 @@ function displayResults(d) {
     // Total
     document.getElementById('totalAmount').textContent = formatIDR(d.total);
     document.getElementById('totalTerbilang').textContent = formatTerbilang(d.total);
+
+    // Lampiran
+    buildLampiran(d.reason);
 }
 
 // ============================================================
