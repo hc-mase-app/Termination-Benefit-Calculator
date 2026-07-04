@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termination Benefit Calculator | Created by Yan Firdaus</title>
+    <title>Termination Benefit Calculator | PP No. 35 Tahun 2021</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,9 +12,10 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <a href="/tools" class="back-link">← Tools</a>
+            <a href="/tools" target="_top" class="back-link"><- Tools</a>
             <h1>Termination Benefit Calculator</h1>
             <p class="subtitle">Estimasi hak karyawan berdasarkan <span class="highlight">PP No. 35 Tahun 2021</span></p>
+            <p class="subtitle" style="font-size: 12px; color: #9a9a98; margin-top: 4px;">✓ Revisi: Multiplier khusus per jenis PHK sesuai Pasal 40-57</p>
         </header>
 
         <!-- Main Content -->
@@ -42,8 +43,8 @@
                             <label for="employmentStatus">Status Kepegawaian <span class="required">*</span></label>
                             <select id="employmentStatus" required>
                                 <option value="" disabled selected>Pilih status</option>
-                                <option value="PKWTT">PKWTT — Tetap</option>
-                                <option value="PKWT">PKWT — Kontrak</option>
+                                <option value="PKWTT">PKWTT - Tetap</option>
+                                <option value="PKWT">PKWT - Kontrak</option>
                             </select>
                         </div>
                         <div class="form-group" id="pkwtDurationGroup" style="display:none;">
@@ -85,6 +86,22 @@
                             </div>
                             <span class="helper">Transport, makan, dll</span>
                         </div>
+                        <div class="form-group">
+                            <label for="workDaysPerWeek">Hari Kerja / Minggu <span class="required">*</span></label>
+                            <select id="workDaysPerWeek" required>
+                                <option value="6" selected>6 hari (Senin-Sabtu)</option>
+                                <option value="5">5 hari (Senin-Jumat)</option>
+                            </select>
+                            <span class="helper">Untuk perhitungan upah harian cuti (Pasal 33)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="minimumWage">UMP / UMK (opsional)</label>
+                            <div class="input-currency">
+                                <span class="currency">Rp</span>
+                                <input type="text" id="minimumWage" class="currency-input" placeholder="0">
+                            </div>
+                            <span class="helper">Jika diisi dan upah &lt; UMP, digunakan UMP sebagai dasar (Pasal 33 ayat 3)</span>
+                        </div>
                     </div>
                 </div>
 
@@ -101,8 +118,7 @@
                             <select id="terminationCategory" required>
                                 <option value="" disabled selected>Pilih kategori</option>
                                 <option value="phk_perusahaan">PHK oleh Perusahaan</option>
-                                <option value="phk_pekerja">PHK oleh Pekerja</option>
-                                <option value="berakhir">Berakhirnya Hubungan Kerja</option>
+                                <option value="phk_pekerja">PHK oleh Pekerja / Berakhirnya HK</option>
                             </select>
                         </div>
                         <div class="form-group" id="subCategoryGroup" style="display:none;">
@@ -116,6 +132,7 @@
                     <div class="info-panel" id="reasonInfoPanel" style="display:none;">
                         <p id="reasonDescription"></p>
                         <span class="info-tag" id="reasonPasal"></span>
+                        <span class="info-tag" id="reasonDetailPasal" style="margin-top: 4px; display: inline-block;"></span>
                     </div>
                 </div>
 
@@ -123,7 +140,7 @@
                 <div class="section-block">
                     <div class="section-header">
                         <span class="section-number">04</span>
-                        <h2>Hak Tambahan (UPH)</h2>
+                        <h2>Uang Penggantian Hak (UPH)</h2>
                     </div>
 
                     <div class="form-grid">
@@ -144,6 +161,24 @@
                                 <span class="currency">Rp</span>
                                 <input type="text" id="otherUPH" class="currency-input" placeholder="0">
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5: Uang Pisah (Conditional) -->
+                <div class="section-block" id="uangPisahGroup" style="display:none;">
+                    <div class="section-header">
+                        <span class="section-number">05</span>
+                        <h2>Uang Pisah</h2>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="uangPisahAmount">Uang Pisah (sesuai PK/PP/PKB)</label>
+                            <div class="input-currency">
+                                <span class="currency">Rp</span>
+                                <input type="text" id="uangPisahAmount" class="currency-input" placeholder="0">
+                            </div>
+                            <span class="helper">Hanya untuk: Resign, Mangkir, Pelanggaran Mendesak, Putusan LPHI, Ditahan (rugi)</span>
                         </div>
                     </div>
                 </div>
@@ -176,14 +211,13 @@
                     <div class="result-item" id="upSection">
                         <div class="result-item-header">
                             <div class="result-item-title">
-                                <span class="result-icon">●</span>
+                                <span class="result-icon">*</span>
                                 <span>Uang Pesangon (UP)</span>
                             </div>
                             <span class="result-item-value" id="upAmount">Rp 0</span>
                         </div>
                         <div class="result-item-body">
                             <p id="upExplanation"></p>
-                            <div class="legal-ref" id="upReference"></div>
                         </div>
                     </div>
 
@@ -191,14 +225,13 @@
                     <div class="result-item" id="upmkSection">
                         <div class="result-item-header">
                             <div class="result-item-title">
-                                <span class="result-icon">●</span>
+                                <span class="result-icon">*</span>
                                 <span>Uang Penghargaan Masa Kerja (UPMK)</span>
                             </div>
                             <span class="result-item-value" id="upmkAmount">Rp 0</span>
                         </div>
                         <div class="result-item-body">
                             <p id="upmkExplanation"></p>
-                            <div class="legal-ref" id="upmkReference"></div>
                         </div>
                     </div>
 
@@ -206,14 +239,13 @@
                     <div class="result-item" id="uphResultSection">
                         <div class="result-item-header">
                             <div class="result-item-title">
-                                <span class="result-icon">●</span>
+                                <span class="result-icon">*</span>
                                 <span>Uang Penggantian Hak (UPH)</span>
                             </div>
                             <span class="result-item-value" id="uphAmount">Rp 0</span>
                         </div>
                         <div class="result-item-body">
                             <div id="uphBreakdown"></div>
-                            <div class="legal-ref" id="uphReference"></div>
                         </div>
                     </div>
 
@@ -221,14 +253,27 @@
                     <div class="result-item" id="pkwtSection" style="display:none;">
                         <div class="result-item-header">
                             <div class="result-item-title">
-                                <span class="result-icon">●</span>
+                                <span class="result-icon">*</span>
                                 <span>Kompensasi PKWT</span>
                             </div>
                             <span class="result-item-value" id="pkwtAmount">Rp 0</span>
                         </div>
                         <div class="result-item-body">
                             <p id="pkwtExplanation"></p>
-                            <div class="legal-ref" id="pkwtReference"></div>
+                        </div>
+                    </div>
+
+                    <!-- UANG PISAH -->
+                    <div class="result-item" id="uangPisahSection" style="display:none;">
+                        <div class="result-item-header">
+                            <div class="result-item-title">
+                                <span class="result-icon">*</span>
+                                <span>Uang Pisah</span>
+                            </div>
+                            <span class="result-item-value" id="uangPisahAmountDisplay">Rp 0</span>
+                        </div>
+                        <div class="result-item-body">
+                            <p id="uangPisahExplanation"></p>
                         </div>
                     </div>
 
@@ -236,7 +281,7 @@
                     <div class="result-item excluded" id="notEligibleSection" style="display:none;">
                         <div class="result-item-header">
                             <div class="result-item-title">
-                                <span class="result-icon">○</span>
+                                <span class="result-icon">o</span>
                                 <span>Tidak Diterima</span>
                             </div>
                         </div>
@@ -251,6 +296,15 @@
                     <div class="total-label">Total Estimasi Hak</div>
                     <div class="total-value" id="totalAmount">Rp 0</div>
                     <div class="total-words" id="totalTerbilang"></div>
+                </div>
+
+                <!-- Lampiran -->
+                <div class="lampiran-section" id="lampiranSection">
+                    <div class="lampiran-header">
+                        <h3>LAMPIRAN</h3>
+                        <p>Landasan Hukum Perhitungan Hak Karyawan</p>
+                    </div>
+                    <div class="lampiran-content" id="lampiranContent"></div>
                 </div>
 
                 <!-- Disclaimer -->
@@ -268,7 +322,7 @@
 
         <footer class="footer">
             <p>Termination Benefit Calculator</p>
-            <p>Created by Yan Firdaus | YM-ID — Business, People & Digital Solutions</p>
+            <p>Revisi Multiplier PHK sesuai PP No. 35 Tahun 2021 | Created by Yan Firdaus</p>
         </footer>
     </div>
 
