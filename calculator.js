@@ -485,26 +485,6 @@ function formatTerbilang(angka) {
 }
 
 // ============================================================
-// VALIDASI UPAH MINIMUM (Pasal 33 ayat 3)
-// ============================================================
-function getMinimumWage(monthlyWage, minimumWageInput) {
-    // Jika user mengisi UMP/UMK dan monthlyWage < minimumWage,
-    // gunakan minimumWage sebagai dasar perhitungan
-    if (minimumWageInput > 0 && monthlyWage < minimumWageInput) {
-        return {
-            effectiveWage: minimumWageInput,
-            isUsingMinimum: true,
-            originalWage: monthlyWage
-        };
-    }
-    return {
-        effectiveWage: monthlyWage,
-        isUsingMinimum: false,
-        originalWage: monthlyWage
-    };
-}
-
-// ============================================================
 // CALCULATION FUNCTIONS
 // ============================================================
 function getUPBaseMultiplier(totalMonths) {
@@ -572,15 +552,14 @@ function calculateUPMK(totalMonths, monthlyWage, phkMultiplier) {
     };
 }
 
-function calculateUPH(monthlyWage, remainingLeave, repatriationCost, otherUPH, workDaysPerWeek) {
+function calculateUPH(monthlyWage, remainingLeave) {
     // Pasal 33 ayat (1): 
     // 6 hari kerja/minggu → upah harian = upah bulanan / 25
     // 5 hari kerja/minggu → upah harian = upah bulanan / 21
-    const divisor = (workDaysPerWeek === 5) ? 21 : 25;
+    const divisor = 25;
     const dailyWage = monthlyWage / divisor;
     const leaveCompensation = remainingLeave * dailyWage;
-    const totalUPH = leaveCompensation + repatriationCost + otherUPH;
-    return { amount: totalUPH, leaveCompensation, repatriationCost, otherUPH, remainingLeave, dailyWage, divisor, workDaysPerWeek };
+    return { amount: leaveCompensation, leaveCompensation, remainingLeave, dailyWage, divisor };
 }
 
 function calculatePKWTCompensation(pkwtMonths, monthlyWage) {
